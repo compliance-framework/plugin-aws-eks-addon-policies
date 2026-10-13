@@ -14,5 +14,5 @@ test_violation_when_addon_has_health_issues if {
 
 test_no_violation_custom_approved_status if {
 	count(violation) == 0 with input as {"addon_context": {"current": {"status": "DEGRADED", "health_issue_count": 0}}}
-		with data.approved_addon_statuses as ["DEGRADED"]
+		with data.approved_addon_statuses as ["DEGRADED"] # regal ignore:unresolved-reference
 }

@@ -18,7 +18,7 @@ violation[{"id": "eks_addon_health_issues_present"}] if {
 }
 
 approved_addon_status if {
-	status := data.approved_addon_statuses[_]
+	status := data.approved_addon_statuses[_] # regal ignore:unresolved-reference
 	addon_status == status
 }
 
