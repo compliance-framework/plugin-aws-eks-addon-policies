@@ -1,0 +1,5 @@
+lisa-design:
+- Fix errors only (W2-S4-T02, user decision 2026-10-13): Regal warnings (detached-metadata, prefer-some-in-iteration, 2x equals-over-count) are left as they are.
+- data.approved_addon_statuses lives only in policies/data.json, which Regal doesn't read: silenced with line-scoped trailing `# regal ignore:unresolved-reference` comments, not a repo .regal/config.yaml (that would replace the shared config CI uses).
+- ci.yml is mock-plugin-policies-1's caller verbatim except push branches: [master] (this repo's default branch).
+- release.yml and build-and-upload.yml untouched (W3 replaces them); push.yaml + test.yml removed (only ran the old OPA 1.6.0 tests; nothing else called them).
