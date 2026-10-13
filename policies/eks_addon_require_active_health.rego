@@ -33,37 +33,37 @@ description := "EKS managed add-on status should be ACTIVE and EKS should report
 
 risk_templates := [
 	{
-		"name":            "EKS managed add-on is not active",
-		"title":           "EKS managed add-on is not in ACTIVE state",
-		"statement":       "The add-on is not in an active state, which may cause cluster networking, DNS, or other critical functions to degrade depending on the add-on's role.",
+		"name": "EKS managed add-on is not active",
+		"title": "EKS managed add-on is not in ACTIVE state",
+		"statement": "The add-on is not in an active state, which may cause cluster networking, DNS, or other critical functions to degrade depending on the add-on's role.",
 		"likelihood_hint": "medium",
-		"impact_hint":     "high",
-		"violation_ids":   ["eks_addon_not_active"],
+		"impact_hint": "high",
+		"violation_ids": ["eks_addon_not_active"],
 		"remediation": {
-			"title":       "Investigate and remediate the add-on status",
+			"title": "Investigate and remediate the add-on status",
 			"description": "Review EKS add-on health events and re-deploy or update the add-on to return it to ACTIVE state.",
 			"tasks": [
 				{"title": "Check add-on health events in the EKS console or via AWS CLI"},
 				{"title": "Update the add-on to the latest compatible version if a version issue is reported"},
-				{"title": "Verify the add-on reaches ACTIVE status after remediation"}
-			]
-		}
+				{"title": "Verify the add-on reaches ACTIVE status after remediation"},
+			],
+		},
 	},
 	{
-		"name":            "EKS managed add-on has health issues",
-		"title":           "EKS managed add-on has unresolved health issues reported by AWS",
-		"statement":       "AWS has reported one or more unresolved health issues for this add-on that may affect cluster stability or the functionality provided by the add-on.",
+		"name": "EKS managed add-on has health issues",
+		"title": "EKS managed add-on has unresolved health issues reported by AWS",
+		"statement": "AWS has reported one or more unresolved health issues for this add-on that may affect cluster stability or the functionality provided by the add-on.",
 		"likelihood_hint": "medium",
-		"impact_hint":     "medium",
-		"violation_ids":   ["eks_addon_health_issues_present"],
+		"impact_hint": "medium",
+		"violation_ids": ["eks_addon_health_issues_present"],
 		"remediation": {
-			"title":       "Resolve add-on health issues",
+			"title": "Resolve add-on health issues",
 			"description": "Review and address the reported health issues for the add-on.",
 			"tasks": [
 				{"title": "Review add-on health issues via the EKS console or AWS CLI"},
 				{"title": "Address the root cause of each reported health issue"},
-				{"title": "Verify health issue count returns to zero after remediation"}
-			]
-		}
+				{"title": "Verify health issue count returns to zero after remediation"},
+			],
+		},
 	},
 ]
