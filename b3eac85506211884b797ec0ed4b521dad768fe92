@@ -1,0 +1,2 @@
+lisa-selfreview:
+Pass 1 (packs core, rego-policy): approve, no findings. Checked CORE-CI-001 (every caller has top-level permissions; pins are full SHAs at v1.5.2), CORE-DOC-001 (README only documents local `make build`, still accurate), CORE-SIZE-001 (134+/43-). Callers match the reviewed plugin-local-ssh-policies#14 byte for byte; config equals workflows release-please/defaults.json at v1.5.2. Local gate: actionlint v1.7.12 clean; OPA 1.14.1 check/test (4/4)/build ok; old `opa build -b policies` and new `opa build --bundle policies` give a byte-identical bundle.
